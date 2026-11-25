@@ -1,0 +1,43 @@
+@baseUrl = http://localhost:5152
+@id = 1
+
+### Listar usuarios
+GET {{baseUrl}}/api/User
+
+### Consultar usuario
+GET {{baseUrl}}/api/User/{{id}}
+
+### Crear usuario
+POST {{baseUrl}}/api/User
+Content-Type: application/json
+
+{
+  "name": "Ana",
+  "lastName": "Pérez",
+  "email": "ana@example.com",
+  "address": "Calle Mayor 12",
+  "phoneNumber": "+34 600 123 456",
+  "isActive": true
+}
+
+### Actualizar usuario
+PUT {{baseUrl}}/api/User/{{id}}
+Content-Type: application/json
+
+{
+  "name": "Ana",
+  "lastName": "Pérez",
+  "email": "ana@example.com",
+  "address": "Calle Mayor 13",
+  "phoneNumber": "+34 600 123 456",
+  "isActive": true
+}
+
+### Cambiar estado
+PATCH {{baseUrl}}/api/User/{{id}}/status
+Content-Type: application/json
+
+{ "isActive": false }
+
+### Eliminar usuario
+DELETE {{baseUrl}}/api/User/{{id}}
